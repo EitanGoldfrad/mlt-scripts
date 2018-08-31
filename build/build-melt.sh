@@ -51,7 +51,7 @@ FFMPEG_SUPPORT_LIBVPX=1
 FFMPEG_SUPPORT_THEORA=1
 FFMPEG_SUPPORT_MP3=1
 FFMPEG_SUPPORT_FAAC=1
-FFMPEG_ADDITIONAL_OPTIONS=--enable-librtmp --enable-gnutls
+FFMPEG_ADDITIONAL_OPTIONS=
 ENABLE_VIDSTAB=1
 VIDSTAB_HEAD=1
 VIDSTAB_REVISION=
@@ -459,7 +459,7 @@ function set_globals {
 
   #####
   # ffmpeg
-  CONFIG[0]="./configure --prefix=$FINAL_INSTALL_DIR --enable-gpl --enable-version3 --enable-shared --enable-debug --enable-pthreads --enable-runtime-cpudetect"
+  CONFIG[0]="./configure --prefix=$FINAL_INSTALL_DIR --enable-gpl --enable-librtmp --enable-gnutls --enable-version3 --enable-shared --enable-debug --enable-pthreads --enable-runtime-cpudetect"
 
   if [[ "$FFMPEG_REVISION" != *"0.5" ]]; then
     CONFIG[0]="${CONFIG[0]} --disable-doc"
