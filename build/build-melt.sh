@@ -50,14 +50,14 @@ FFMPEG_SUPPORT_H265=1
 FFMPEG_SUPPORT_LIBVPX=1
 FFMPEG_SUPPORT_THEORA=1
 FFMPEG_SUPPORT_MP3=1
-FFMPEG_SUPPORT_FAAC=0
-FFMPEG_ADDITIONAL_OPTIONS=
+FFMPEG_SUPPORT_FAAC=1
+FFMPEG_ADDITIONAL_OPTIONS=--enable-librtmp --enable-gnutls
 ENABLE_VIDSTAB=1
 VIDSTAB_HEAD=1
 VIDSTAB_REVISION=
 MLT_HEAD=1
 MLT_REVISION=
-ENABLE_WEBVFX=0
+ENABLE_WEBVFX=1
 WEBVFX_HEAD=1
 WEBVFX_REVISION=
 # QT_INCLUDE_DIR="$(pkg-config --variable=prefix QtCore)/include"
@@ -471,7 +471,7 @@ function set_globals {
     CONFIG[0]="${CONFIG[0]} --enable-libmp3lame"
   fi
   if test 1 = "$FFMPEG_SUPPORT_FAAC" ; then
-    CONFIG[0]="${CONFIG[0]} --enable-libfaac --enable-nonfree"
+    CONFIG[0]="${CONFIG[0]} --enable-libfdk-aac --enable-nonfree"
   fi
   if test 1 = "$FFMPEG_SUPPORT_H264" ; then
     CONFIG[0]="${CONFIG[0]} --enable-libx264"
