@@ -523,7 +523,7 @@ function set_globals {
 
   ####
   # x264
-  CONFIG[3]="./configure --prefix=$FINAL_INSTALL_DIR --disable-lavf --disable-ffms --disable-gpac --disable-swscale --enable-shared"
+  CONFIG[3]="./configure --prefix=$FINAL_INSTALL_DIR --disable-lavf --disable-ffms --disable-gpac --disable-swscale --enable-shared --disable-asm"
   CFLAGS_[3]=$CFLAGS
   [ "$TARGET_OS" = "Darwin" ] && CFLAGS_[3]="-I. -fno-common -read_only_relocs suppress ${CFLAGS_[3]} "
   LDFLAGS_[3]=$LDFLAGS
