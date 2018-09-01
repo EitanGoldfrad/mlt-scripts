@@ -349,7 +349,7 @@ function set_globals {
 
   # REPOLOCS Array holds the repo urls
   if test "$FFMPEG_PROJECT" = "FFmpeg"; then
-      REPOLOCS[0]="git://github.com/FFmpeg/FFmpeg.git"
+      REPOLOCS[0]="-b release/4.0 git://github.com/FFmpeg/FFmpeg.git"
   elif test "$FFMPEG_PROJECT" = "libav"; then
       REPOLOCS[0]="git://git.libav.org/libav.git"
   else
