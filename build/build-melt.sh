@@ -459,7 +459,7 @@ function set_globals {
 
   #####
   # ffmpeg
-  CONFIG[0]="./configure --prefix=$FINAL_INSTALL_DIR --enable-gpl --enable-libfreetype --enable-librtmp --enable-gnutls --enable-version3 --enable-shared --enable-debug --enable-pthreads --enable-runtime-cpudetect"
+  CONFIG[0]="./configure --prefix=$FINAL_INSTALL_DIR --enable-gpl --enable-libfribidi --enable-libass --enable-libspeex --enable-libfreetype --enable-librtmp --enable-gnutls --enable-version3 --enable-shared --enable-debug --enable-pthreads --enable-runtime-cpudetect"
 
   if [[ "$FFMPEG_REVISION" != *"0.5" ]]; then
     CONFIG[0]="${CONFIG[0]} --disable-doc"
