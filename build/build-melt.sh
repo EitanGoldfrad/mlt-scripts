@@ -890,7 +890,7 @@ function get_subproject {
               cmd git reset --hard || die "Unable to reset git tree for $1"
               cmd git checkout master || die "Unable to git checkout master"
               if test "git://github.com/FFmpeg/FFmpeg.git" = "$REPOLOC" ; then
-                  cmd git --no-pager pull $REPOLOC release/4.0 || die "Unable to git pull sources for $1"
+                  cmd git --no-pager pull -X theirs $REPOLOC release/4.0 || die "Unable to git pull sources for $1"
               else
                   cmd git --no-pager pull $REPOLOC master || die "Unable to git pull sources for $1"
               fi
