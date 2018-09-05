@@ -357,7 +357,7 @@ function set_globals {
   fi
   REPOLOCS[1]="git://github.com/mltframework/mlt.git"
   REPOLOCS[2]="git://github.com/dyne/frei0r.git"
-  REPOLOCS[3]="git://github.com/mirror/x264.git"
+  REPOLOCS[3]="git://github.com/videolan/x264.git"
   REPOLOCS[4]="https://chromium.googlesource.com/webm/libvpx.git"
   REPOLOCS[5]="git://github.com/mltframework/swfdec.git"
   REPOLOCS[6]="https://ftp.osuosl.org/pub/blfs/conglomeration/lame/lame-3.99.5.tar.gz"
@@ -523,7 +523,7 @@ function set_globals {
 
   ####
   # x264
-  CONFIG[3]="./configure --prefix=$FINAL_INSTALL_DIR --disable-lavf --disable-ffms --disable-gpac --disable-swscale --enable-shared --disable-asm"
+  CONFIG[3]="./configure --prefix=$FINAL_INSTALL_DIR --enable-shared --disable-asm"
   CFLAGS_[3]=$CFLAGS
   [ "$TARGET_OS" = "Darwin" ] && CFLAGS_[3]="-I. -fno-common -read_only_relocs suppress ${CFLAGS_[3]} "
   LDFLAGS_[3]=$LDFLAGS
