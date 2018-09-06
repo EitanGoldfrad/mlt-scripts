@@ -889,7 +889,11 @@ function get_subproject {
               feedback_status "Pulling git sources for $1"
               cmd git reset --hard || die "Unable to reset git tree for $1"
               cmd git checkout master || die "Unable to git checkout master"
-              cmd git --no-pager pull $REPOLOC master || die "Unable to git pull sources for $1"
+              if test "git://github.com/FFmpeg/FFmpeg.git" = "$REPOLOC" ; then
+                  cmd git --no-pager pull -X theirs $REPOLOC release/4.0 || die "Unable to git pull sources for $1"
+              else
+                  cmd git --no-pager pull $REPOLOC master || die "Unable to git pull sources for $1"
+              fi
               cmd git checkout $REVISION || die "Unable to git checkout $REVISION"
           else
               # A dir with the expected name, but not a git repo, bailing out
@@ -900,7 +904,11 @@ function get_subproject {
           # No git repo
           debug "No git repo, need to check out"
           feedback_status "Cloning git sources for $1"
-          cmd git --no-pager clone $REPOLOC || die "Unable to git clone source for $1 from $REPOLOC"
+          if test "git://github.com/FFmpeg/FFmpeg.git" = "$REPOLOC" ; then
+              cmd git --no-pager clone -b release/4.0 $REPOLOC || die "Unable to git clone source for $1 from $REPOLOC"
+          else
+              cmd git --no-pager clone $REPOLOC || die "Unable to git clone source for $1 from $REPOLOC"
+          fi
           cmd cd $1 || die "Unable to change to directory $1"
           cmd git checkout $REVISION || die "Unable to git checkout $REVISION"
       fi
