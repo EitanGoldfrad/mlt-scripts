@@ -12,7 +12,7 @@ RUN apt-get update \
   gettext gperf intltool libffi-dev libltdl-dev libssl-dev libxml-parser-perl \
   make openssl patch perl pkg-config python ruby scons sed unzip wget xz-utils \
   bison nsis libcurl4-openssl-dev autopoint p7zip bzip2 zip curl mingw-w64 \
-  libxkbcommon-x11-0
+  libxkbcommon-x11-0 gnutls-bin libcurl4-gnutls-dev libgnutls-dane0 libgnutls28-dev
 
 WORKDIR /opt
 RUN curl https://s3.amazonaws.com/misc.meltymedia/shotcut-build/mxe-gcc-5.1.0-x64.tar.bz2 | tar xj
