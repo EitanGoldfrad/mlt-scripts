@@ -7,10 +7,10 @@ RUN apt-get update && apt-get install -y apt-utils && apt-get upgrade -y
 # Install packages for building
 RUN apt-get install -y wget git automake autoconf libtool intltool g++ yasm nasm \
   swig libgavl-dev libsamplerate0-dev libxml2-dev ladspa-sdk libjack-dev \
-  libsox-dev libsdl2-dev libgtk2.0-dev libsoup2.4-dev \
+  libsox-dev libsdl2-dev libgtk2.0-dev libgnutls28-dev libsoup2.4-dev \
   qt5-default libqt5webkit5-dev libqt5svg5-dev \
   libexif-dev libtheora-dev libvorbis-dev python-dev cmake xutils-dev \
-  libegl1-mesa-dev libeigen3-dev libfftw3-dev libvdpau-dev \
+  libegl1-mesa-dev libeigen3-dev libfftw3-dev libvdpau-dev  \
   # Additional runtime libs \
   libgavl1 libsox2 libexif12 xvfb libxkbcommon-x11-0 libhyphen0 \
   # LADSPA plugins \
