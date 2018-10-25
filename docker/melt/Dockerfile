@@ -1,4 +1,4 @@
-FROM ubuntu:17.10
+FROM jrottenberg/ffmpeg:4.0-ubuntu
 MAINTAINER Dan Dennedy <dan@dennedy.org>
 
 ENV DEBIAN_FRONTEND noninteractive
